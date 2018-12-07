@@ -19,7 +19,7 @@ module.exports = {
     },
     module: {
         rules: [
-            {test: /\.ts$/, exclude: /node_modules/, loader: "babel-loader"},
+            {test: /\.ts/, exclude: /node_modules/, loader: "babel-loader"},
             {test: /\.(png|svg|jpg|gif)$/, use: ['file-loader']},
             {test: /\.css$/, use: ['style-loader', 'css-loader']},
             {test: /pixi\.js/, use: ['expose-loader?PIXI']},
@@ -34,6 +34,7 @@ module.exports = {
         })
     ],
     resolve: {
+        extensions: ['.js', '.ts'],
         alias: {
             'phaser': phaser,
             'pixi': pixi,
